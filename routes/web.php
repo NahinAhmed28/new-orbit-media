@@ -13,8 +13,8 @@ use App\Http\Controllers\Admin\HomeController;
 |
 */
 
-Route::get('home', function () {
-    return view('welcome');
-});
+Route::get('/', function () { return view('frontend.home'); });
+Route::get('/contact', function () { return view('frontend.contact'); });
 
-Route::get('/',[HomeController::class,'index']);
+
+Route::get('/dashboard',[HomeController::class,'index']);
