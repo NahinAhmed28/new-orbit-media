@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ContactController;
+;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,11 @@ use App\Http\Controllers\Admin\ContactController;
 
 Route::get('/', function () { return view('frontend.home'); });
 Route::get('/contact', function () { return view('frontend.contact'); });
+
+Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'store'])->name('usercontact.store');
+
+
+Route::resource('/admin/contact', \App\Http\Controllers\ContactController::class);
 Route::get('/soon', function () { return view('frontend.comming_soon.index'); });
 
 

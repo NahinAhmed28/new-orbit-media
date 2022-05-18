@@ -195,10 +195,10 @@
 
                         <h4 class="fw-700 color-font mb-50">Get In Touch.</h4>
 
-                        <form id="contact-form" method="post" action="https://www.smartinnovates.com/uithemez/item/vie1/vie-light/contact.php">
-
-                            <div class="messages"></div>
-
+                        >
+                            <form method="post" action="{{ route('usercontact.store') }}">
+                                <!-- CROSS Site Request Forgery Protection -->
+                                @csrf
                             <div class="controls">
 
                                 <div class="form-group">
