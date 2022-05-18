@@ -25,6 +25,7 @@ Route::get('/soon', function () { return view('frontend.comming_soon.index'); })
 
     Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
         Route::get('/dashboard',[HomeController::class,'index']);
+        Route::get('/menu', function () { return view('admin.menu'); });
         Route::resource('/contact', ContactController::class);
 
     });
@@ -38,3 +39,7 @@ Route::get('/soon', function () { return view('frontend.comming_soon.index'); })
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect()->route('login')->with('success', 'Successfully Logged Out.');
+})->name('logout');
