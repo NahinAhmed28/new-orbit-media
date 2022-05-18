@@ -18,22 +18,22 @@
                     <a class="nav-link"  href="{{URL('/')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="{{URL('/soon')}}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
+                    <a class="nav-link" href="{{URL('/soon')}}">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Projects</a>
+                    <a class="nav-link" href="{{URL('/soon')}}">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Shops</a>
+                    <a class="nav-link" href="{{URL('/soon')}}">Shops</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Blogs</a>
+                    <a class="nav-link" href="{{URL('/soon')}}">Blogs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Get Quote</a>
+                    <a class="nav-link" href="{{URL('/soon')}}">Get Quote</a>
                 </li>
 
                 <li class="nav-item">
