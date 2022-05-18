@@ -26,14 +26,40 @@
                                 <td>{{$contact->form_message}}</td>
                                 <td>{{ \Carbon\Carbon::parse($contact->created_at)->diffForHumans() }}</td>
                                 <td>
-                                    <a href="{{ route('admin.contact.show',[$contact->id]) }}" title="View Student">
-                                        <button class="btn btn-info btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i> Show
-                                        </button>
+                                    <a href="#" class="btn btn-primary" title="View Student" data-toggle="modal" data-target="#details{{ $loop->index }}">show
+                                    <i class="fa far-eye "></i>
                                     </a>
                                 </td>
-
                             </tr>
+                            <div class="modal fade" id="details{{ $loop->index }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">{{ $contact->form_first_name }} {{$contact->form_last_name}}</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                x
+                                            </button>
+                                        </div>
+
+                                            <div class="modal-body">
+                                                <!-- Links -->
+                                                <div class="list-group ">
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Name : {{ $contact->form_first_name }} {{$contact->form_last_name}}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Email: {{ $contact->form_email }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Phone : {{ $contact->form_phone }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Message : {{ $contact->form_message }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Created At: {{ \Carbon\Carbon::parse($contact->created_at)->diffForHumans() }}</a>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Discard</button>
+                                            </div>
+
+                                    </div>
+                                </div>
+                            </div>
                         @endforeach
+
                         </tfoot>
                     </table>
                 </div>
