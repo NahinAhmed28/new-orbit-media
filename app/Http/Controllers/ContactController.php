@@ -6,11 +6,23 @@ use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
+
 class ContactController extends Controller
 {
     public function store(Request $request)
     {
 //        dd($request->all());
+
+
+
+
+        $this->validate($request, [
+            'form_first_name' => 'required|string',
+            'form_last_name' => 'required|string',
+            'form_email' => 'required|string|email',
+            'form_phone' => 'required|numeric ',
+            'form_message' => 'required|string|max:25555',
+        ]);
 
         $value= Contact::create([
             'form_first_name'=> $request->form_first_name,
@@ -26,6 +38,9 @@ class ContactController extends Controller
         {
 //            return Redirect::back()->with('message','Message Send !');
             return Redirect::back()->withErrors(['msg' => 'Message Send !']);
+        }
+        else{
+            return Redirect::back()->withErrors(['msg' => 'Message Send failed !']);
         }
 
     }
