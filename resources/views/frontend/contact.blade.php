@@ -192,32 +192,42 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form md-mb50">
-
+                        @if($errors->any())
+                            <h5 class="text-white">{{$errors->first()}}</h5>
+                        @endif
                         <h4 class="fw-700 color-font mb-50">Get In Touch.</h4>
 
-                        >
-                            <form method="post" action="{{ route('usercontact.store') }}">
+                        <form method="post" action="{{ route('usercontact.store') }}">
                                 <!-- CROSS Site Request Forgery Protection -->
                                 @csrf
-                            <div class="controls">
+                                <div class="messages"></div>
+                                <div class="controls">
 
-                                <div class="form-group">
-                                    <input id="form_name" type="text" name="name" placeholder="Name"
-                                           required="required">
-                                </div>
+                                    <div class="form-group">
 
-                                <div class="form-group">
-                                    <input id="form_email" type="email" name="email" placeholder="Email"
-                                           required="required">
-                                </div>
+                                        <input id="form_first_name" type="text" name="form_first_name" placeholder="First Name *"
+                                               required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="form_last_name" type="text" name="form_last_name" placeholder="Last Name *"
+                                               required="required">
+                                    </div>
 
-                                <div class="form-group">
-                                        <textarea id="form_message" name="message" placeholder="Message" rows="4"
+                                    <div class="form-group">
+                                        <input id="form_email" type="email" name="form_email" placeholder="Email *"
+                                               required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" data-js="input" id="phone" name="form_phone" placeholder="(XXX) XXX-XXXX" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <textarea id="form_message" name="form_message" placeholder="Company" rows="4"
                                                   required="required"></textarea>
-                                </div>
+                                    </div>
 
-                                <button type="submit" class="butn dark"><p>Send Message</p></button>
-                            </div>
+                                    <button type="submit" class="butn dark"><p>Send Message</p></button>
+                                </div>
                         </form>
                     </div>
                 </div>

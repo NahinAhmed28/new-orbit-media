@@ -13,16 +13,19 @@ class ContactController extends Controller
 //        dd($request->all());
 
         $value= Contact::create([
-            'form_name'=> $request->form_name,
+            'form_first_name'=> $request->form_first_name,
+            'form_last_name'=> $request->form_last_name,
             'form_email'=> $request->form_email,
+            'form_phone'=> $request->form_phone,
             'form_message'=> $request->form_message
+
 
         ]);
 
         if ($value)
         {
-            return Redirect::back()->with('message','Operation Successful !');
-
+//            return Redirect::back()->with('message','Message Send !');
+            return Redirect::back()->withErrors(['msg' => 'Message Send !']);
         }
 
     }
