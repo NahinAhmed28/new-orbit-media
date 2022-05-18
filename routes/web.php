@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ContactController;
@@ -17,22 +18,19 @@ use App\Http\Controllers\Admin\ContactController;
 
 Route::get('/', function () { return view('frontend.home'); });
 Route::get('/contact', function () { return view('frontend.contact'); });
-
 Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'store'])->name('usercontact.store');
-
-
 Route::resource('/admin/contact', \App\Http\Controllers\ContactController::class);
 Route::get('/soon', function () { return view('frontend.comming_soon.index'); });
 
 
+    Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
+        Route::get('/dashboard',[HomeController::class,'index']);
+        Route::resource('/contact', ContactController::class);
 
-Route::middleware(['auth' ])->group(function () {
-
-    Route::get('/admin/dashboard',[HomeController::class,'index']);
-    Route::resource('/admin/contact', ContactController::class);
+    });
 
 
-});
+
 
 
 

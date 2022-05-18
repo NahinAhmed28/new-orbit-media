@@ -46,11 +46,13 @@ class ContactController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function show($id)
     {
-        //
+        $contacts = Contact::find($id);;
+        return view('admin.contact.show',compact('contacts'));
+
     }
 
     /**
