@@ -192,9 +192,6 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form md-mb50">
-                        @if($errors->any())
-                            <h5 class="text-white">{{$errors->first()}}</h5>
-                        @endif
                         <h4 class="fw-700 color-font mb-50">Get In Touch.</h4>
 
                         <form method="post" action="{{ route('usercontact.store') }}">
@@ -203,27 +200,38 @@
                                 <div class="messages"></div>
                                 <div class="controls">
 
-                                    <div class="form-group">
+                                    <div class="form-group {{ $errors->has('form_first_name') ? 'has-danger' : '' }}">
 
-                                        <input id="form_first_name" type="text" name="form_first_name" placeholder="First Name *"
-                                               required="required">
+                                        <input id="form_first_name" type="text" name="form_first_name" placeholder="First Name *">
+                                        @if ($errors->has('form_first_name'))
+                                            <small class="form-control-feedback text-white">{{ $errors->first('form_first_name') }}</small>
+                                        @endif
                                     </div>
-                                    <div class="form-group">
-                                        <input id="form_last_name" type="text" name="form_last_name" placeholder="Last Name *"
-                                               required="required">
+                                    <div class="form-group {{ $errors->has('form_last_name') ? 'has-danger' : '' }}">
+                                        <input id="form_last_name" type="text" name="form_last_name" placeholder="Last Name *">
+                                        @if ($errors->has('form_last_name'))
+                                            <div class="form-control-feedback text-white">{{ $errors->first('form_last_name') }}</div>
+                                        @endif
                                     </div>
 
-                                    <div class="form-group">
-                                        <input id="form_email" type="email" name="form_email" placeholder="Email *"
-                                               required="required">
+                                    <div class="form-group {{ $errors->has('form_email') ? 'has-danger' : '' }}">
+                                        <input id="form_email" type="email" name="form_email" placeholder="Email *">
+                                        @if ($errors->has('form_email'))
+                                            <div class="form-control-feedback text-white">{{ $errors->first('form_email') }}</div>
+                                        @endif
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group {{ $errors->has('form_phone') ? 'has-danger' : '' }}">
                                         <input type="text" data-js="input" id="phone" name="form_phone" placeholder="(XXX) XXX-XXXX" />
+                                        @if ($errors->has('form_phone'))
+                                            <div class="form-control-feedback text-white">{{ $errors->first('form_phone') }}</div>
+                                        @endif
                                     </div>
 
-                                    <div class="form-group">
-                                        <textarea id="form_message" name="form_message" placeholder="Company" rows="4"
-                                                  required="required"></textarea>
+                                    <div class="form-group {{ $errors->has('form_message') ? 'has-danger' : '' }}">
+                                        <textarea id="form_message" name="form_message" placeholder="Company" rows="4"></textarea>
+                                        @if ($errors->has('form_message'))
+                                            <div class="form-control-feedback text-white">{{ $errors->first('form_message') }}</div>
+                                        @endif
                                     </div>
 
                                     <button type="submit" class="butn dark"><p>Send Message</p></button>

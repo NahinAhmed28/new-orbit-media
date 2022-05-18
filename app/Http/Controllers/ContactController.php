@@ -11,18 +11,17 @@ class ContactController extends Controller
 {
     public function store(Request $request)
     {
-//        dd($request->all());
 
-
-
-
-        $this->validate($request, [
+         $request->validate([
             'form_first_name' => 'required|string',
             'form_last_name' => 'required|string',
             'form_email' => 'required|string|email',
-            'form_phone' => 'required|numeric ',
-            'form_message' => 'required|string|max:25555',
+            'form_phone' => 'required ',
+            'form_message' => 'required',
         ]);
+
+//        dd($request->all());
+
 
         $value= Contact::create([
             'form_first_name'=> $request->form_first_name,
@@ -36,12 +35,10 @@ class ContactController extends Controller
 
         if ($value)
         {
-//            return Redirect::back()->with('message','Message Send !');
-            return Redirect::back()->withErrors(['msg' => 'Message Send !']);
+            return Redirect::back()->with('message','Message Send !');
+//            return Redirect::back()->withErrors(['msg' => 'Message Send !']);
         }
-        else{
-            return Redirect::back()->withErrors(['msg' => 'Message Send failed !']);
-        }
+
 
     }
 
