@@ -17,7 +17,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('admin.contact.index');
+        $contacts = Contact::get();
+        return view('admin.contact.index',compact('contacts'));
     }
 
     /**
