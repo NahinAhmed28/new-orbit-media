@@ -620,9 +620,10 @@
     <div id="content" class="main-content">
         <div class="layout-px-spacing">
 
-@yield('content')
+{{--@yield('content')--}}
 
-
+            {!! Menu::render() !!}
+            {!! Menu::scripts() !!}
         </div>
         <div class="footer-wrapper">
             <div class="footer-section f-section-1">

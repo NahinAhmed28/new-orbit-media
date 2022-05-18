@@ -3,13 +3,9 @@
 
 @section('contents')
 
-    {!! Menu::render() !!}
-
 
 
 @endsection
-
-
 
 @push('scripts')
     {!! Menu::scripts() !!}
