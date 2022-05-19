@@ -7,8 +7,10 @@
 
         <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
             <div class="widget-content widget-content-area br-6">
+                <a href="{{route('admin.blog.create')}}" class="btn btn-info mt-4"> + Create New Blog </a>
+
                 <div class="table-responsive mb-4 mt-4">
-                    <table id="zero-config" class="table table-hover" style="width:100%">
+                     <table id="zero-config" class="table table-hover" style="width:100%">
                         <thead>
                         <th>Title</th>
                         <th>Meta Title</th>
