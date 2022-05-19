@@ -10,14 +10,14 @@
                 <div class="table-responsive mb-4 mt-4">
                     <table id="zero-config" class="table table-hover" style="width:100%">
                         <thead>
-                        <th>title</th>
-                        <th>meta_title</th>
-                        <th>meta_desc </th>
-                        <th>meta_tag</th>
-                        <th>slug </th>
-                        <th>category </th>
-                        <th>cover_image </th>
-                        <th>description </th>
+                        <th>Title</th>
+                        <th>Meta Title</th>
+                        <th>Meta Desc </th>
+                        <th>Meta Tag</th>
+                        <th>Slug </th>
+                        <th>Category </th>
+                        <th>Cover Image </th>
+                        <th>Description </th>
                         <th class="text-center">Action</th>
                         </thead>
                         <tbody>
@@ -49,15 +49,15 @@
                                             <div class="modal-body">
                                                 <!-- Links -->
                                                 <div class="list-group ">
-                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">title : {{ $blog->title }} </a>
-                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">meta_title: {{ $blog->meta_title }}</a>
-                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">meta_desc : {{ $blog->meta_desc }}</a>
-                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">meta_tag : {{ $blog->meta_tag }}</a>
-                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">slug : {{ $blog->slug }}</a>
-                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">category : {{ $blog->category }}</a>
-                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">cover_image : {{ $blog->cover_image }}</a>
-                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">description : {{ $blog->description }}</a>
-                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Created At: {{ \Carbon\Carbon::parse($contact->created_at)->diffForHumans() }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Title : {{ $blog->title }} </a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Meta title: {{ $blog->meta_title }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Meta Desc : {{ $blog->meta_desc }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Meta Tag : {{ $blog->meta_tag }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Slug : {{ $blog->slug }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Category : {{ $blog->category }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Cover Image : {{ $blog->cover_image }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Description : {{ $blog->description }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Created At: {{ \Carbon\Carbon::parse($blog->created_at)->diffForHumans() }}</a>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
