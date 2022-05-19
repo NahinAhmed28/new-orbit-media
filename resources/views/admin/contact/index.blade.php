@@ -10,21 +10,26 @@
                 <div class="table-responsive mb-4 mt-4">
                     <table id="zero-config" class="table table-hover" style="width:100%">
                         <thead>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone </th>
-                        <th>Message</th>
-                        <th>Created At</th>
+                        <th>title</th>
+                        <th>meta_title</th>
+                        <th>meta_desc </th>
+                        <th>meta_tag</th>
+                        <th>slug </th>
+                        <th>category </th>
+                        <th>cover_image </th>
+                        <th>description </th>
                         <th class="text-center">Action</th>
                         </thead>
                         <tbody>
-                        @foreach($contacts as $contact)
+                        @foreach($blogs as $blog)
                             <tr>
-                                <td>{{$contact->form_first_name}}{{$contact->form_last_name}}</td>
-                                <td>{{$contact->form_email}}</td>
-                                <td>{{$contact->form_phone}}</td>
-                                <td>{{$contact->form_message}}</td>
-                                <td>{{ \Carbon\Carbon::parse($contact->created_at)->diffForHumans() }}</td>
+                                <td>{{$blog->title}}</td>
+                                <td>{{$blog->meta_title}}</td>
+                                <td>{{$blog->slug}}</td>
+                                <td>{{$blog->category}}</td>
+                                <td>{{$blog->cover_image}}</td>
+                                <td>{{$blog->description}}</td>
+                                <td>{{ \Carbon\Carbon::parse($blog->created_at)->diffForHumans() }}</td>
                                 <td>
                                     <a href="#" class="btn btn-primary" title="View Student" data-toggle="modal" data-target="#details{{ $loop->index }}">show
                                     <i class="fa far-eye "></i>
@@ -35,7 +40,7 @@
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">{{ $contact->form_first_name }} {{$contact->form_last_name}}</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">{{ $blog->title }} </h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 x
                                             </button>
@@ -44,10 +49,14 @@
                                             <div class="modal-body">
                                                 <!-- Links -->
                                                 <div class="list-group ">
-                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Name : {{ $contact->form_first_name }} {{$contact->form_last_name}}</a>
-                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Email: {{ $contact->form_email }}</a>
-                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Phone : {{ $contact->form_phone }}</a>
-                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Message : {{ $contact->form_message }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">title : {{ $blog->title }} </a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">meta_title: {{ $blog->meta_title }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">meta_desc : {{ $blog->meta_desc }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">meta_tag : {{ $blog->meta_tag }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">slug : {{ $blog->slug }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">category : {{ $blog->category }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">cover_image : {{ $blog->cover_image }}</a>
+                                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">description : {{ $blog->description }}</a>
                                                     <a href="javascript:void(0);" class="list-group-item list-group-item-action font-weight-bold">Created At: {{ \Carbon\Carbon::parse($contact->created_at)->diffForHumans() }}</a>
                                                 </div>
                                             </div>
