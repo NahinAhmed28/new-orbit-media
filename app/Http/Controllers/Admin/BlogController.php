@@ -4,17 +4,18 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Blog;
 
-class HomeController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view ('admin.dashboard');
+        //
     }
 
     /**

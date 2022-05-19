@@ -24,7 +24,7 @@ Route::get('/soon', function () { return view('frontend.comming_soon.index'); })
 
 
     Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
-        Route::get('/dashboard',[HomeController::class,'index']);
+        Route::resource('/dashboard',HomeController::class);
         Route::get('/menu', function () { return view('admin.menu'); });
         Route::resource('/contact', ContactController::class);
 
