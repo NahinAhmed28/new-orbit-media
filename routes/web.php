@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\BlogController;
 ;
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/soon', function () { return view('frontend.comming_soon.index'); })
         Route::resource('/dashboard',HomeController::class);
         Route::get('/menu', function () { return view('admin.menu'); });
         Route::resource('/contact', ContactController::class);
+        Route::resource('/blog', BlogController::class);
 
     });
 
