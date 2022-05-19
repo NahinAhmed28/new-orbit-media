@@ -35,7 +35,7 @@ class ContactController extends Controller
 
         if ($value)
         {
-            return Redirect::back()->with('message','Message Send !');
+            return Redirect::back()->with('message','We have recieved your message, We will get back to you soon!');
 //            return Redirect::back()->withErrors(['msg' => 'Message Send !']);
         }
 

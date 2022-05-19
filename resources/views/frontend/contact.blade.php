@@ -193,7 +193,11 @@
                 <div class="col-lg-6">
                     <div class="form md-mb50">
                         <h4 class="fw-700 color-font mb-50">Get In Touch.</h4>
-
+                        @if (Session::has('message'))
+                          <div class="alert alert-success">
+                            {{ session('message') }}
+                          </div>
+                        @endif
                         <form method="post" action="{{ route('usercontact.store') }}">
                                 <!-- CROSS Site Request Forgery Protection -->
                                 @csrf
@@ -283,5 +287,6 @@
 
 <!-- ==================== End main-content ==================== -->
 <!-- ==================== Start Footer ==================== -->
+
 
 @include('frontend.layout.footer')

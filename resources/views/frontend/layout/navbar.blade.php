@@ -2,7 +2,7 @@
     <div class="container">
 
         <!-- Logo -->
-        <a class="logo" href="#">
+        <a class="logo" href="{{ URL('/') }}">
             <img src="{{asset('frontend/img/logo-dark.png')}}" alt="logo">
         </a>
 

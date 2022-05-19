@@ -113,6 +113,7 @@
 
 <!-- plugins -->
 <script src="{{asset('frontend/js/plugins.js')}}"></script>
+<script src="{{asset('frontend/js/index.js')}}"></script>
 <script src="{{asset('frontend/js/main.js')}}"></script>
 
 <!-- custom scripts -->
